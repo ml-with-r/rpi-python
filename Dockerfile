@@ -1,23 +1,22 @@
 # Pull base image
-FROM resin/rpi-raspbian:wheezy
-MAINTAINER Dieter Reuter <dieter@hypriot.com>
-
+FROM resin/rpi-raspbian:jessie
 
 # install apt packages
 RUN apt-get update && apt-get install -yq \
     python3 \
-    python3-dev \
     python3-pip \
-    --no-install-recommends && \
+    python3-dev \
+    python3-virtualenv && \
     rm -rf /var/lib/apt/lists/*
 
+# update pip tools
+RUN pip3 install --upgrade pip setuptools 
 
-
-# install python modules
+# add requirements of packages names
 ADD requirements.txt /
-RUN pip3 install --upgrade pip
-RUN pip3 install -r requirements.txt
 
+# install packages from requirements
+RUN pip3 install -r requirements.txt
 
 # setup juptyer
 RUN jupyter nbextension enable --py --sys-prefix widgetsnbextension
