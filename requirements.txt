@@ -1,3 +1,0 @@
-jupyter
-ipywidgets
-jupyter_contrib_nbextensions
