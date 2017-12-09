@@ -9,7 +9,7 @@ For RaspberryPi3: https://www.raspberrypi.org/blog/docker-comes-to-raspberry-pi/
 
 ## Running container for the first time
 
-First run `docker pull rh01/rpi-python` to pull the latest version of image. Run using `docker run -it --name pythonenv1 rh01/rpi-python`. This command downloads the prepared image from a public hub, and starts a bash for you.
+First run `docker pull rh02/rpi-python` to pull the latest version of image. Run using `docker run -it --name pythonenv1 rh02/rpi-python`. This command downloads the prepared image from a public hub, and starts a bash for you.
 
 ## Stopping and starting the container
 
